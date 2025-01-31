@@ -9,12 +9,12 @@
 
   <Identity
     Name="3968edb6-b819-4dfe-9e62-359b6f48f7cd"
-    Publisher="CN=SeppeDekeyser"
+    Publisher="CN=Edu-Tech test, O=Edu-Tech test, C=US"
     Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>Package</DisplayName>
-    <PublisherDisplayName>SeppeDekeyser</PublisherDisplayName>
+    <DisplayName>Prompt-o-mat</DisplayName>
+    <PublisherDisplayName>Edu-Tech (test)</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 
@@ -32,8 +32,8 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="Package"
-        Description="Package"
+        DisplayName="Prompt-o-mat"
+        Description="Prompt-o-mat"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
         Square44x44Logo="Images\Square44x44Logo.png">
