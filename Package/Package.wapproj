@@ -77,7 +77,7 @@
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" PrivateAssets="all" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AnotherTestConsoleApp\PromptRunner.csproj" />
+    <ProjectReference Include="..\PromptRunner\PromptRunner.csproj" />
     <ProjectReference Include="..\CopilotSmartCards\CopilotSmartCards.csproj" />
   </ItemGroup>
 </Project>

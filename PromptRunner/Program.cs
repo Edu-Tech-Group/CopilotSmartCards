@@ -51,7 +51,7 @@ namespace PromptRunner
                     return;
                 }
 
-                Thread.Sleep(5000);
+                Thread.Sleep(10000);
 
                 SetForegroundWindow(browserProcess.MainWindowHandle);
                 SendKeys.SendWait($"{prompt}\n");
