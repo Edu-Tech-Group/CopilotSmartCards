@@ -50,7 +50,7 @@ namespace CopilotSmartCards
             }
 
             var deviceInfos = await SmartCardReaderUtils.GetAllSmartCardReaderInfos(SmartCardReaderKind.Any);
-            var deviceInfo = deviceInfos.Where(x => x.Name == "ACS ACR122U PICC Interface 0").FirstOrDefault();
+            var deviceInfo = deviceInfos.Where(x => !x.Name.Contains("Windows Hello")).FirstOrDefault();
 
             if (deviceInfo == null)
             {

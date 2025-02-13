@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -39,30 +40,49 @@ namespace PromptRunner
         {
             string prompt = Prompts[args[2]];
             Console.WriteLine($"card {args[2]} - {prompt}");
+            //string prompt = "Hello world!";
 
             try
             {
-                var browserProcess = Process.Start("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", "--hide-crash-restore-bubble https://m365.cloud.microsoft/chat");
+                //var browserProcess = Process.Start("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", "--hide-crash-restore-bubble https://m365.cloud.microsoft/chat");
                 //var browserProcess = Process.Start("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe", "https://m365.cloud.microsoft/chat");
+                Process.Start("msedge.exe", "https://m365.cloud.microsoft/chat");
+                //var browserProcess = Process.Start("microsoft-edge:https://m365.cloud.microsoft/chat");
+
+                Thread.Sleep(1000);
+
+                var processes = Process.GetProcesses();
+
+                var browserProcess = Process.GetProcesses().Where(x => x.ProcessName == "msedge").FirstOrDefault();
 
                 if (browserProcess == null)
                 {
-                    Console.WriteLine("Cannot start process");
+                    Console.WriteLine("Cannot find process");
                     return;
                 }
 
-                Thread.Sleep(10000);
+                Thread.Sleep(5000);
 
                 SetForegroundWindow(browserProcess.MainWindowHandle);
                 SendKeys.SendWait($"{prompt}\n");
 
                 Thread.Sleep(30000);
 
-                browserProcess.Kill();
+                KillEdge();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Exception - {ex.Message}");
+            }
+        }
+
+        static void KillEdge()
+        {
+            var processes = Process.GetProcessesByName("msedge");
+
+            foreach (var process in processes)
+            {
+                process.Kill();
             }
         }
     }
