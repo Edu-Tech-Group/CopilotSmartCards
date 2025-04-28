@@ -9,7 +9,7 @@
 
   <Identity
     Name="3968edb6-b819-4dfe-9e62-359b6f48f7cd"
-    Publisher="CN=Edu-Tech, O=Edu-Tech, C=US"
+    Publisher="CN=Prompt-o-mat, O=Edu-Tech, C=US"
     Version="1.0.0.0" />
 
   <Properties>
