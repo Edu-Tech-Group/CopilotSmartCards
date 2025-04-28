@@ -8,9 +8,19 @@ You can find pre-build binaries in the [latest release](https://github.com/Edu-T
 
 To install the app on your computer:
 - download the latest release
-- unzip and open the folder
-- find the `Install.ps1` script inside of the `Package_1.0.0.0_Test` folder.
-- right-click this file and select "Run with PowerShell"
+- unzip and open the folder, then open the `Package_1.0.0.0_Test` folder
+
+First off, you have to install the certificate on your machine:
+1. right-click the `Package_1.0.0.0_x86.msixbundle` file and click "properties"
+2. go to the "Digital Signatures" tab
+3. select "Prompt-o-mat" and click "Details"
+4. click "View certificate"
+5. click "Install certificate"
+6. select "Local machine" and click "next". If an administrator prompt pops up, click "yes"
+7. select "Place all certificates under the following store" and select "Trusted people"
+8. select "Next" and then "Finish"
+
+Now that the certificate is installed, you can install the Prompt-o-mat by double-clicking the `Package_1.0.0.0_x86.msixbundle` file and clicking "install"
 
 Once this is finished, you can open the app called "Prompt-o-mat" on your computer.
 
