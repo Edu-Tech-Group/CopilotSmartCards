@@ -9,12 +9,12 @@
 
   <Identity
     Name="3968edb6-b819-4dfe-9e62-359b6f48f7cd"
-    Publisher="CN=Edu-Tech test, O=Edu-Tech test, C=US"
+    Publisher="CN=Edu-Tech, O=Edu-Tech, C=US"
     Version="1.0.0.0" />
 
   <Properties>
     <DisplayName>Prompt-o-mat</DisplayName>
-    <PublisherDisplayName>Edu-Tech (test)</PublisherDisplayName>
+    <PublisherDisplayName>Edu-Tech</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 

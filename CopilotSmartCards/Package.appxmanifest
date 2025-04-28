@@ -16,8 +16,8 @@
   <mp:PhoneIdentity PhoneProductId="9924836e-d7cf-493b-82f1-df238f8fb7c7" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>CopilotSmartCards</DisplayName>
-    <PublisherDisplayName>SeppeDekeyser</PublisherDisplayName>
+    <DisplayName>Prompt-o-mat</DisplayName>
+    <PublisherDisplayName>Edu-Tech</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

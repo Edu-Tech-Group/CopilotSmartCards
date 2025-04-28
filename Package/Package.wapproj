@@ -57,7 +57,7 @@
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <NoWarn>$(NoWarn);NU1702</NoWarn>
     <EntryPointProjectUniqueName>..\CopilotSmartCards\CopilotSmartCards.csproj</EntryPointProjectUniqueName>
-    <PackageCertificateThumbprint>10E97261962725556196069F6221C465B842F4CB</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>0D4A51BAC2D47E613B4A1BC0F2B7C419D0E5EF6A</PackageCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

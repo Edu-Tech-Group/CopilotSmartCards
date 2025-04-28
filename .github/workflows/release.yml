@@ -1,18 +1,15 @@
-name: CI Build
+name: Create release package
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    tags: [ "v*" ]
+
+permissions:
+  contents: write
 
 jobs:
 
   build:
-
-    strategy:
-      matrix:
-        configuration: [Debug, Release]
 
     runs-on: windows-latest  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
@@ -42,7 +39,7 @@ jobs:
     - name: Restore the application
       run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
       env:
-        Configuration: ${{ matrix.configuration }}
+        Configuration: Release
 
     # Decode the base 64 encoded pfx and save the Signing_Certificate
     - name: Decode the pfx
@@ -58,15 +55,14 @@ jobs:
         Appx_Bundle: Always
         Appx_Bundle_Platforms: x86|x64
         Appx_Package_Build_Mode: StoreUpload
-        Configuration: ${{ matrix.configuration }}
+        Configuration: Release
 
     # Remove the pfx
     - name: Remove the pfx
       run: Remove-Item -path $env:Wap_Project_Directory\GitHubActionsWorkflow.pfx
 
-    # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
+    - name: Create draft release
+      uses: softprops/action-gh-release@v2
       with:
-        name: Prompt-o-mat_${{ matrix.configuration }}
-        path: ${{ env.Wap_Project_Directory }}\AppPackages
+        files: ${{ env.Wap_Project_Directory }}\AppPackages
+        draft: true
